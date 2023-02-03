@@ -2,6 +2,7 @@ package adventofcode;
 
 import adventofcode.camp.cleanup.CampCleanup;
 import adventofcode.rucksack.reorganisation.RuckSackReorganisation;
+import adventofcode.supply.stacks.SupplyStack;
 
 import java.util.List;
 import java.util.Set;
@@ -20,7 +21,8 @@ public class App {
     private static List<NamedCommand> getAvailableCommand() {
         return List.of(
                 new RuckSackReorganisation(),
-                new CampCleanup()
+                new CampCleanup(),
+                new SupplyStack()
         );
     }
 }
