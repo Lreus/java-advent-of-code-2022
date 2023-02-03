@@ -1,5 +1,7 @@
 package adventofcode;
 
+import adventofcode.rucksack.reorganisation.RuckSackReorganisation;
+
 import java.util.List;
 import java.util.Set;
 
@@ -15,6 +17,8 @@ public class App {
     }
 
     private static List<NamedCommand> getAvailableCommand() {
-        return List.of();
+        return List.of(
+                new RuckSackReorganisation()
+        );
     }
 }
