@@ -1,5 +1,6 @@
 package adventofcode;
 
+import adventofcode.camp.cleanup.CampCleanup;
 import adventofcode.rucksack.reorganisation.RuckSackReorganisation;
 
 import java.util.List;
@@ -18,7 +19,8 @@ public class App {
 
     private static List<NamedCommand> getAvailableCommand() {
         return List.of(
-                new RuckSackReorganisation()
+                new RuckSackReorganisation(),
+                new CampCleanup()
         );
     }
 }
