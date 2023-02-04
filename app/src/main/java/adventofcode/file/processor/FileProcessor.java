@@ -8,26 +8,23 @@ import java.util.Scanner;
 public class FileProcessor {
     public static void process(String filePath, FileCommand command) throws Exception {
         Optional<Scanner> inputs = loadFile(filePath);
+        if (inputs.isEmpty()) return;
 
-        if (inputs.isPresent()) {
-            Scanner scanner = inputs.get();
-            command.setLoadedFile(scanner);
-            System.out.println(command.call());
-            scanner.close();
-        }
+        Scanner scanner = inputs.get();
+        command.setLoadedFile(scanner);
+        System.out.println(command.call());
+        scanner.close();
     }
 
     private static Optional<Scanner> loadFile(String filePath) {
-        Optional<Scanner> result;
         try {
-            File target = new File(filePath);
-            Scanner scanner = new Scanner(target);
-            result = Optional.of(scanner);
-        } catch (FileNotFoundException e) {
-            result = Optional.empty();
-            System.out.printf("Could not find input file: %s", e.getMessage());
-        }
+            Scanner scanner = new Scanner(new File(filePath));
 
-        return result;
+            return Optional.of(scanner);
+        } catch (FileNotFoundException e) {
+            System.out.printf("Could not find input file: %s", e.getMessage());
+
+            return Optional.empty();
+        }
     }
 }

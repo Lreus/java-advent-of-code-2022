@@ -3,6 +3,7 @@ package adventofcode;
 import adventofcode.camp.cleanup.CampCleanup;
 import adventofcode.rucksack.reorganisation.RuckSackReorganisation;
 import adventofcode.supply.stacks.SupplyStack;
+import adventofcode.tuning.trouble.TuningTrouble;
 
 import java.util.List;
 import java.util.Set;
@@ -22,7 +23,8 @@ public class App {
         return List.of(
                 new RuckSackReorganisation(),
                 new CampCleanup(),
-                new SupplyStack()
+                new SupplyStack(),
+                new TuningTrouble()
         );
     }
 }
