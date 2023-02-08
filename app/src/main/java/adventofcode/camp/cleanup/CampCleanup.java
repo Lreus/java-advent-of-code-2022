@@ -14,13 +14,12 @@ public class CampCleanup implements NamedCommand {
 
     @Override
     public String getTitle() {
-        return String.join(
-            System.lineSeparator(),
-            "",
-            "--- Day 4: Camp Cleanup ---",
-            "https://adventofcode.com/2022/day/4",
-            ""
-        );
+        return """
+            
+            --- Day 4: Camp Cleanup ---
+            https://adventofcode.com/2022/day/4
+            
+            """;
     }
 
     @Override

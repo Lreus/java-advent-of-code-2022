@@ -13,13 +13,12 @@ public class TuningTrouble implements NamedCommand {
 
     @Override
     public String getTitle() {
-        return String.join(
-                System.lineSeparator(),
-                "",
-                "--- Day 6: Tuning Trouble ---",
-                "https://adventofcode.com/2022/day/6",
-                ""
-        );
+        return """
+            
+            --- Day 6: Tuning Trouble ---
+            https://adventofcode.com/2022/day/6
+
+            """;
     }
 
     @Override

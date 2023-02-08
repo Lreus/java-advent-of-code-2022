@@ -13,13 +13,12 @@ public class RuckSackReorganisation implements NamedCommand {
     }
 
     public String getTitle() {
-        return String.join(
-                System.lineSeparator(),
-                "",
-                "--- Day 3: Rucksack Reorganization ---",
-                "https://adventofcode.com/2022/day/3",
-                ""
-        );
+        return """
+            
+            --- Day 3: Rucksack Reorganization ---
+            https://adventofcode.com/2022/day/3
+            
+            """;
     }
 
     @Override

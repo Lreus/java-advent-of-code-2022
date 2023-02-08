@@ -15,13 +15,12 @@ public class SupplyStack implements NamedCommand {
 
     @Override
     public String getTitle() {
-        return String.join(
-                System.lineSeparator(),
-                "",
-                "--- Day 5: Supply Stacks ---",
-                "https://adventofcode.com/2022/day/5",
-                ""
-        );
+        return """
+            
+            --- Day 5: Supply Stacks ---
+            https://adventofcode.com/2022/day/5
+            
+            """;
     }
 
     @Override
