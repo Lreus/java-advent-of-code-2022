@@ -1,6 +1,7 @@
 package adventofcode;
 
 import adventofcode.camp.cleanup.CampCleanup;
+import adventofcode.no.space.left.NoSpaceLeft;
 import adventofcode.rucksack.reorganisation.RuckSackReorganisation;
 import adventofcode.supply.stacks.SupplyStack;
 import adventofcode.tuning.trouble.TuningTrouble;
@@ -24,7 +25,8 @@ public class App {
                 new RuckSackReorganisation(),
                 new CampCleanup(),
                 new SupplyStack(),
-                new TuningTrouble()
+                new TuningTrouble(),
+                new NoSpaceLeft()
         );
     }
 }
