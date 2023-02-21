@@ -4,6 +4,7 @@ import adventofcode.camp.cleanup.CampCleanup;
 import adventofcode.no.space.left.NoSpaceLeft;
 import adventofcode.rucksack.reorganisation.RuckSackReorganisation;
 import adventofcode.supply.stacks.SupplyStack;
+import adventofcode.treetop.tree.house.TreetopTreeHouse;
 import adventofcode.tuning.trouble.TuningTrouble;
 
 import java.util.List;
@@ -26,7 +27,8 @@ public class App {
                 new CampCleanup(),
                 new SupplyStack(),
                 new TuningTrouble(),
-                new NoSpaceLeft()
+                new NoSpaceLeft(),
+                new TreetopTreeHouse()
         );
     }
 }
