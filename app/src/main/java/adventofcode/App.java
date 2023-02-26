@@ -13,12 +13,19 @@ import java.util.Set;
 public class App {
     public static void main(String[] args) {
         Set<String> arguments = Set.of(args);
-        for (NamedCommand command : getAvailableCommand()) {
-            if (arguments.contains(command.getName())) {
-                System.out.println(command.getTitle());
-                command.run();
-            }
+
+        runAnyCommandInArguments(arguments);
+
+        if (arguments.contains("help")) {
+            System.out.println("Use any of these arguments to display puzzle results: ");
+            printAllCommandNames();
         }
+    }
+
+    private static void runAnyCommandInArguments(Set<String> arguments) {
+        getAvailableCommand().stream()
+                .filter(command -> arguments.contains(command.getName()))
+                .forEach(App::runCommand);
     }
 
     private static List<NamedCommand> getAvailableCommand() {
@@ -30,5 +37,16 @@ public class App {
                 new NoSpaceLeft(),
                 new TreetopTreeHouse()
         );
+    }
+
+    private static void runCommand(NamedCommand command) {
+        System.out.println(command.getTitle());
+        command.run();
+    }
+
+    private static void printAllCommandNames() {
+        getAvailableCommand().stream()
+            .map(NamedCommand::getName)
+            .forEach(System.out::println);
     }
 }
