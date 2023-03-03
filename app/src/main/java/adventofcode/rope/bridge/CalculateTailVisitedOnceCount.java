@@ -18,14 +18,31 @@ public class CalculateTailVisitedOnceCount implements FileCommand {
             return "No file loaded, cannot execute command";
         }
 
-        Follower tail = new Follower(0, 0);
-        Mover head = new Mover(0, 0);
-        head.addFollower(tail);
+        Leader head = new Leader(0, 0);
+        CommandInterpreter interpreter = new CommandInterpreter(head);
+        Follower neck = new Follower(0, 0);
+        head.addFollower(neck);
+        head.addVertebrae(7);
 
+        Follower tail = new Follower(0, 0);
+        head.addFollower(tail);
+        head.printName();
         while (loadedFile.hasNextLine()) {
-            head.move(loadedFile.nextLine());
+            interpreter.run(loadedFile.nextLine());
         }
 
-        return String.format("tail has visited %d different positions at least once.", tail.visitedOnceCount());
+        return String.join(
+            System.lineSeparator(),
+            buildVisitedCountMessage(neck, "neck"),
+            buildVisitedCountMessage(tail, "tail")
+        );
+    }
+
+    private String buildVisitedCountMessage(Follower subject, String label) {
+        return String.format(
+            "%s has visited %d different positions at least once.",
+            label,
+            subject.visitedOnceCount()
+        );
     }
 }
