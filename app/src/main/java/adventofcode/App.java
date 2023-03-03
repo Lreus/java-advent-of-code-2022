@@ -2,6 +2,7 @@ package adventofcode;
 
 import adventofcode.camp.cleanup.CampCleanup;
 import adventofcode.no.space.left.NoSpaceLeft;
+import adventofcode.rope.bridge.RopeBridge;
 import adventofcode.rucksack.reorganisation.RuckSackReorganisation;
 import adventofcode.supply.stacks.SupplyStack;
 import adventofcode.treetop.tree.house.TreetopTreeHouse;
@@ -35,7 +36,8 @@ public class App {
                 new SupplyStack(),
                 new TuningTrouble(),
                 new NoSpaceLeft(),
-                new TreetopTreeHouse()
+                new TreetopTreeHouse(),
+                new RopeBridge()
         );
     }
 
